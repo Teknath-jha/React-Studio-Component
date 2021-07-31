@@ -1,23 +1,25 @@
 import React from 'react';
 import "./index.css";
+import Card from './Cards';
 import Heading from './Heading';
-import Para from './Para';
-import List from './List';
-import Time from './Time';
-import  {add , sub , mul , div } from './Calculator';
+import Sdata from "./Sdata"
 
 
-function App(){
-    return(<>
-        <ul>
-            <li>Add of two number is : {add(2,5)}</li>
-            <li>Sub of two number is : {sub(2,5)}</li>
-            <li>Mul of two number is : {mul(2,5)}</li>
-            <li>Div of two number is : {div(22,7)}</li>
-        </ul>
-    </>);
-}
-
+const App = () => (
+    <>
+        <Heading 
+            title="The Nextflix Series"
+        />
+       { Sdata.map(val => <Card
+                key={val.id}
+                imgsrc={val.imgsrc}
+                title={val.title}
+                sname={val.sname}
+                link={val.link}
+         />)
+        }
+    </>
+)
 
 export default App;
 
